@@ -13,7 +13,7 @@ namespace WcfDbService
     [ServiceBehavior(IncludeExceptionDetailInFaults = true, ConcurrencyMode = ConcurrencyMode.Multiple, InstanceContextMode = InstanceContextMode.Single)]
     public class DbWorkerService : IDbWorkerService
     {
-        SqlDbProvider sqlDb { get; set; }
+        SqlDbProvider sqlDb;
 
         public void CreateIdemAcount(string email, string phone)
         {
