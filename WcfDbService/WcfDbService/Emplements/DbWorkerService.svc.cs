@@ -13,11 +13,9 @@ namespace WcfDbService
     [ServiceBehavior(IncludeExceptionDetailInFaults = true, ConcurrencyMode = ConcurrencyMode.Multiple, InstanceContextMode = InstanceContextMode.Single)]
     public class DbWorkerService : IDbWorkerService
     {
-        SqlDbProvider sqlDb;
-
         public void CreateIdemAcount(string email, string phone)
         {
-            sqlDb = new SqlDbProvider();
+            var sqlDb = new SqlDbProvider();
             sqlDb.CreateIdemAcount(email, phone);
 
             //chek callback working
